@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hiring Assignment</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="card.css" />
+  </head>
+  <body>
+    <div class="flex spaceBetween horizontalCenter header">
+      <img
+        src="https://www.phonepe.com/images/generic/PhonePe-Logo.svg"
+        alt="logo"
+        srcset=""
+      />
+
+      <span>Assignment</span>
+    </div>
+    <div class="flex container">
+      <div class="column card">
+        <div class="card-header">
+          To Do
+        </div>
+        <div class="divider8"></div>
+        <div class="card-body">
+          <div class="divider8"></div>
+
+          <div
+            class="cardWrapperToDo"
+            id="ToDo"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+            ondragenter="handleDragEnter(event)"
+          ></div>
+
+          <div
+            class="flex horizontalCenter add-task "
+            id="addCardToDo"
+            onclick="toggleAddTask('ToDo')"
+          >
+            <i class="fa fa-plus"></i>
+            <div class="spacer8"></div>
+            Add another card
+          </div>
+
+          <div
+            class="flex column card-task add-task-container hide"
+            id="composeTaskToDo"
+          >
+            <textarea
+              dir="auto"
+              placeholder="Enter a title for this card…"
+              spellcheck="false"
+              id="composeToDo"
+            ></textarea>
+            <div class="flex horizontalCenter add-footer">
+              <button onclick="addTask('ToDo')">Add Card</button>
+              <div class="spacer8"></div>
+              <i class="fa fa-times close" onclick="toggleAddTask('ToDo')"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column card">
+        <div class="card-header">
+          Started
+        </div>
+        <div class="divider8"></div>
+        <div class="card-body" ondragover="allowDrop(event)">
+          <div class="divider8"></div>
+
+          <div class="cardWrapper" id="Started"></div>
+
+          <div
+            class="flex horizontalCenter add-task "
+            id="addCardStarted"
+            onclick="toggleAddTask('Started')"
+          >
+            <i class="fa fa-plus"></i>
+            <div class="spacer8"></div>
+            Add another card
+          </div>
+
+          <div
+            class="flex column card-task add-task-container hide"
+            id="composeTaskStarted"
+          >
+            <textarea
+              dir="auto"
+              placeholder="Enter a title for this card…"
+              spellcheck="false"
+              id="composeStarted"
+            ></textarea>
+            <div class="flex horizontalCenter add-footer">
+              <button onclick="addTask('Started')">Add Card</button>
+              <div class="spacer8"></div>
+              <i
+                class="fa fa-times close"
+                onclick="toggleAddTask('Started')"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column card">
+        <div class="card-header">
+          Done
+        </div>
+        <div class="divider8"></div>
+        <div class="card-body" ondragover="allowDrop(event)">
+          <div class="divider8"></div>
+
+          <div class="cardWrapperDone" id="Done"></div>
+
+          <div
+            class="flex horizontalCenter add-task "
+            id="addCardDone"
+            onclick="toggleAddTask('Done')"
+          >
+            <i class="fa fa-plus"></i>
+            <div class="spacer8"></div>
+            Add another card
+          </div>
+
+          <div
+            class="flex column card-task add-task-container hide"
+            id="composeTaskDone"
+          >
+            <textarea
+              dir="auto"
+              placeholder="Enter a title for this card…"
+              spellcheck="false"
+              id="composeDone"
+              autofocus
+            ></textarea>
+            <div class="flex horizontalCenter add-footer">
+              <button onclick="addTask('Done')">Add Card</button>
+              <div class="spacer8"></div>
+              <i class="fa fa-times close" onclick="toggleAddTask('Done')"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/drag-drop.js"></script>
+  </body>
+</html>
